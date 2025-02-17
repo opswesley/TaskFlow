@@ -65,13 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Adicionar "(Expirada)" se a tarefa estiver expirada
+            const expiredText = task.expired ? ' (Expirada)' : '';
+
             const li = document.createElement('li');
             li.className = 'task-item';
             if (task.completed) li.classList.add('completed');
-            if (task.expired) li.classList.add('expired');
+            if (task.expired) li.classList.add('expired'); // Classe específica para tarefas expiradas
             li.innerHTML = `
                 <input type="checkbox" ${task.completed ? 'checked' : ''} data-index="${index}">
-                <span>${task.text} (${formattedTime})${timeRemaining}</span>
+                <span>${task.text} (${formattedTime})${timeRemaining}${expiredText}</span>
                 <button class="delete-btn" data-index="${index}"><i class="fas fa-trash"></i></button>
             `;
             taskList.appendChild(li);
