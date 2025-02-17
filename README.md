@@ -52,28 +52,19 @@ The **Task Manager** is a simple and efficient web application to organize your 
 ---
 ## Screenshots
 ### Web View
-![Web View](https://i.postimg.cc/027KWcF6/image.png)
+![Web View](https://i.postimg.cc/XqKfSBww/image.png)
+![Web View](https://i.postimg.cc/QMpxqgsk/image.png)
 ### Smartphone View
-![Smartphone View](https://i.postimg.cc/bwWc1yb9/image.png)
+![Smartphone View](https://i.postimg.cc/SNfK8fS6/image.png)
+![Smartphone View](https://i.postimg.cc/T3nJnSyk/image.png)
 ---
-## Future Improvements
-1. **Advanced Animations**
-   - Add more sophisticated animations for task interactions.
-2. **Sound Notifications**
-   - Add sounds for alerts and confetti animations.
-3. **Improved Responsiveness**
-   - Enhance the layout for smaller screens.
-4. **Statistics and Reports**
-   - Show statistics about completed, pending, and expired tasks.
-5. **Visual Timer (Optional)**
-   - Display a visual timer for tasks with time limits.
-6. **Custom Themes (Optional)**
-   - Allow users to choose between different color themes.
+## Project Completion Notice
+This project has reached its final version and will no longer receive updates. All planned features have been implemented, and the codebase is now considered complete.
 ---
 ## License
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as needed.
 ---
-> **Note**: This project was developed as part of a practical learning process and is constantly evolving. Feel free to explore and suggest improvements!
+> **Note**: This project was developed as part of a practical learning process and has now reached its conclusion. Thank you for exploring!
 ---
 **PT/BR**
 # Gerenciador de Tarefas
@@ -130,25 +121,16 @@ O **Gerenciador de Tarefas** é uma aplicação web simples e eficiente para org
 ---
 ## Capturas de Tela
 ### Visualização Web
-![Visualização Web](https://i.postimg.cc/027KWcF6/image.png)
+![Visualização Web](https://i.postimg.cc/XqKfSBww/image.png)
+![Visualização Web](https://i.postimg.cc/QMpxqgsk/image.png)
 ### Visualização Smartphone
-![Visualização Smartphone](https://i.postimg.cc/bwWc1yb9/image.png)
+![Visualização Smartphone](https://i.postimg.cc/SNfK8fS6/image.png)
+![Visualização Smartphone](https://i.postimg.cc/T3nJnSyk/image.png)
 ---
-## Melhorias Futuras
-1. **Animações Avançadas**
-   - Adicionar animações mais sofisticadas para interações de tarefas.
-2. **Notificações Sonoras**
-   - Adicionar sons para alertas e confetes.
-3. **Responsividade Aprimorada**
-   - Aprimorar o layout para telas menores.
-4. **Estatísticas e Relatórios**
-   - Mostrar estatísticas sobre tarefas concluídas, pendentes, etc.
-5. **Cronômetro Visual (Opcional)**
-   - Exibir um cronômetro visual para tarefas com tempo limite.
-6. **Temas Personalizados (Opcional)**
-   - Permitir que o usuário escolha entre diferentes temas de cores.
+## Aviso de Conclusão do Projeto
+Este projeto chegou à sua versão final e não receberá mais atualizações. Todas as funcionalidades planejadas foram implementadas, e a base de código agora é considerada completa.
 ---
 ## Licença
 Este projeto está licenciado sob a [MIT License](LICENSE). Sinta-se à vontade para usá-lo, modificá-lo e distribuí-lo conforme necessário.
 ---
-> **Nota**: Este projeto foi desenvolvido como parte de um aprendizado prático e está em constante evolução. Fique à vontade para explorar e sugerir melhorias!
+> **Nota**: Este projeto foi desenvolvido como parte de um aprendizado prático e agora chegou ao fim. Obrigado por explorar!
