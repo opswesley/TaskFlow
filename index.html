@@ -18,6 +18,20 @@
       </div>
       <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
     </header>
+    <div id="statistics" class="statistics">
+        <h3>Estatísticas</h3>
+        <ul>
+            <li>Total de Tarefas: <span id="total-tasks">0</span></li>
+            <li>Tarefas Concluídas: <span id="completed-tasks">0</span></li>
+            <li>Tarefas Pendentes: <span id="pending-tasks">0</span></li>
+            <li>Tarefas Expiradas: <span id="expired-tasks">0</span></li>
+        </ul>
+        <!-- Gráfico -->
+        <div class="chart-container">
+            <canvas id="task-chart"></canvas>
+        </div>
+    </div>
+    <!-- Formulário de Adição de Tarefa -->
     <div class="input-container">
       <input type="text" id="task-input" placeholder="Digite uma nova tarefa..." required>
       <div class="timer-container">
@@ -30,22 +44,30 @@
       </div>
       <button id="add-task-btn"><i class="fas fa-plus"></i> Adicionar</button>
     </div>
+    <!-- Filtros -->
     <div class="filters">
       <button class="filter-btn active" data-filter="all">Todas</button>
       <button class="filter-btn" data-filter="pending">Pendentes</button>
       <button class="filter-btn" data-filter="completed">Concluídas</button>
       <button class="filter-btn" data-filter="expired">Expiradas</button>
     </div>
+    <!-- Lista de Tarefas -->
     <ul id="task-list" class="no-select"></ul>
   </div>
+  <!-- Modal de Notificação -->
   <div id="notification-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
       <p id="modal-message"></p>
     </div>
   </div>
+  <!-- Sons -->
+  <audio id="add-task-sound" src="https://notificationsounds.com/storage/sounds/file-sounds-767-arpeggio.mp3"></audio>
+  <audio id="completed-sound" src="https://notificationsounds.com/storage/sounds/file-sounds-1335-checked-off.mp3"></audio>
+  <audio id="delete-task-sound" src="https://notificationsounds.com/storage/sounds/file-sounds-871-wet.mp3"></audio>
+  <!-- Bibliotecas Externas -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
