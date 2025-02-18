@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +42,7 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que o conteúdo se ajuste em várias linhas */
+    flex-wrap: wrap; 
 }
 
 .header-content {
@@ -84,7 +83,7 @@ body.dark-mode #dark-mode-toggle {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que os inputs se alinhem verticalmente */
+    flex-wrap: wrap; 
 }
 
 .timer-container {
@@ -154,7 +153,7 @@ body.dark-mode #dark-mode-toggle {
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que os botões se alinhem verticalmente */
+    flex-wrap: wrap; 
 }
 
 .filter-btn {
@@ -210,7 +209,7 @@ body.dark-mode #dark-mode-toggle {
     position: relative;
     outline: none;
     transition: background 0.3s ease;
-    flex-shrink: 0; /* Impede que o checkbox encolha */
+    flex-shrink: 0; 
 }
 
 .task-item input[type="checkbox"]:checked {
@@ -228,15 +227,15 @@ body.dark-mode #dark-mode-toggle {
 }
 
 .task-item span {
-    flex-grow: 1; /* Permite que o texto ocupe o espaço disponível */
-    white-space: nowrap; /* Evita quebras de linha */
+    flex-grow: 1; 
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Adiciona "..." ao texto truncado */
+    text-overflow: ellipsis; 
     font-size: 16px;
 }
 
 .task-item .task-details {
-    flex-shrink: 0; /* Impede que os detalhes sejam comprimidos */
+    flex-shrink: 0; 
     font-size: 14px;
     color: #666;
 }
@@ -249,7 +248,7 @@ body.dark-mode #dark-mode-toggle {
     padding: 5px 10px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
-    flex-shrink: 0; /* Impede que o botão encolha */
+    flex-shrink: 0; 
 }
 
 .delete-btn:hover {
@@ -403,7 +402,6 @@ body.dark-mode #dark-mode-toggle {
     max-height: 300px;
 }
 
-/* Media Queries para Telas Menores */
 @media (max-width: 768px) {
     body {
         padding: 10px;
