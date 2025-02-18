@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecionar elementos
     const taskInput = document.getElementById('task-input');
     const taskTimer = document.getElementById('task-timer');
     const timeUnitSelect = document.getElementById('time-unit');
@@ -13,15 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const chartContainer = document.querySelector('.chart-container');
     const taskChartCanvas = document.getElementById('task-chart');
 
-    // Carregar tarefas do LocalStorage ao iniciar
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    let activeFilter = 'all'; // Variável para armazenar o filtro ativo
-
-    // Inicializar o gráfico
+    let activeFilter = 'all'; 
+    
     let taskChart;
 
     function initializeChart() {
-        if (taskChart) taskChart.destroy(); // Destruir o gráfico anterior, se existir
+        if (taskChart) taskChart.destroy(); 
 
         taskChart = new Chart(taskChartCanvas.getContext('2d'), {
             type: 'pie',
@@ -74,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para renderizar as tarefas
     function renderTasks(filter = activeFilter) {
         taskList.innerHTML = '';
         const filteredTasks = tasks.filter(task => {
@@ -112,11 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.className = 'task-item';
             li.setAttribute('data-index', index);
-            li.setAttribute('draggable', true); // Habilitar drag and drop
+            li.setAttribute('draggable', true); // Habilitar drag and drop PC!
             if (task.completed) li.classList.add('completed');
             if (task.expired) li.classList.add('expired');
 
-            // Checkbox adicionada novamente
             li.innerHTML = `
                 <input type="checkbox" class="task-checkbox" ${task.completed ? 'checked' : ''}>
                 <span>${task.text} (${formattedTime})${timeRemaining}${expiredText}</span>
@@ -152,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     showModal(`A tarefa "${task.text}" expirou!`);
                     tasks[index].expired = true;
 
-                    // Adicionar animação de pulso à tarefa expirada
+                    // Animação de pulso à tarefa expirada
                     setTimeout(() => {
                         const expiredTask = document.querySelector(`.task-item[data-index="${index}"]`);
                         if (expiredTask) {
@@ -206,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveTasksToLocalStorage();
             renderTasks(activeFilter);
 
-            // Reproduzir som ao adicionar uma nova tarefa
+            // Som ao adicionar uma nova tarefa
             const addTaskSound = document.getElementById('add-task-sound');
             if (addTaskSound) {
                 addTaskSound.play().catch((error) => {
@@ -214,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Adicionar animação à nova tarefa
+            // Animação à nova tarefa
             const newTask = document.querySelector('.task-item:last-child');
             if (newTask) {
                 setTimeout(() => {
@@ -245,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     origin: { y: 0.6 },
                 });
 
-                // Reproduzir som de conclusão
+                // Som de conclusão
                 const completedSound = document.getElementById('completed-sound');
                 if (completedSound) {
                     completedSound.play().catch((error) => {
@@ -256,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (e.target.tagName === 'BUTTON' || e.target.tagName === 'I') {
             const index = e.target.closest('li').dataset.index;
 
-            // Reproduzir som ao excluir uma tarefa
+            // Som ao excluir uma tarefa
             const deleteTaskSound = document.getElementById('delete-task-sound');
             if (deleteTaskSound) {
                 deleteTaskSound.play().catch((error) => {
@@ -264,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Adicionar animação de fade-out antes de excluir
+            // Animação de fade-out antes de excluir
             const taskToRemove = document.querySelector(`.task-item[data-index="${index}"]`);
             if (taskToRemove) {
                 taskToRemove.classList.add('fade-out');
@@ -288,12 +283,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Alternar modo escuro
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
 
-    // Função para atualizar as estatísticas e o gráfico
     function updateStatistics() {
         const totalTasks = tasks.length;
         const completedTasks = tasks.filter(task => task.completed && !task.expired).length;
@@ -306,14 +299,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('pending-tasks').textContent = pendingTasks;
         document.getElementById('expired-tasks').textContent = expiredTasks;
 
-        // Atualizar o gráfico
         if (taskChart) {
             taskChart.data.datasets[0].data = [completedTasks, pendingTasks, expiredTasks];
             taskChart.update();
         }
     }
 
-    // Função para configurar o drag and drop
     function setupDragAndDrop() {
         const taskItems = document.querySelectorAll('.task-item');
 
@@ -355,7 +346,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Função auxiliar para determinar onde inserir a tarefa durante o drag
     function getDragAfterElement(container, y) {
         const draggableElements = [...container.querySelectorAll('.task-item:not(.dragging)')];
 
@@ -370,10 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { offset: Number.NEGATIVE_INFINITY }).element;
     }
 
-    // Inicializar o gráfico e renderizar as tarefas
     initializeChart();
     renderTasks(activeFilter);
 
-    // Iniciar verificação periódica de tarefas expiradas
     setInterval(checkExpiredTasks, 10000);
 });
